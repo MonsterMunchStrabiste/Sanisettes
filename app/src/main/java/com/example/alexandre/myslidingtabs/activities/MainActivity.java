@@ -89,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
     public class WCUpdate extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d(TAG, " ");//getIntent().getAction());
-            GetWCServices.startActionBiers(getApplicationContext());
-            setNewLines();
+            Log.d("wc receive", intent.getAction().toString());//getIntent().getAction());
             //new SlidingTabsColorsFragment.SampleFragmentPagerAdapter.setNewLines();
         }
     }

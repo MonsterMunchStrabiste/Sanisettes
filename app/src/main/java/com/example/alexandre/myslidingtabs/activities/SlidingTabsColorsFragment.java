@@ -118,6 +118,7 @@ public class SlidingTabsColorsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ArrayList<String> lines;
+        int color;
         lines = (ArrayList) this.getArguments().getSerializable("lines");
         // BEGIN_INCLUDE (populate_tabs)
         /**
@@ -126,36 +127,73 @@ public class SlidingTabsColorsFragment extends Fragment {
          */
 
         for ( int i = 0; i < lines.size() ; i++ ) {
+            switch (lines.get(i)) {
+                case "1":
+                    color = 0xFFF2C931;
+                    break;
+                case "2":
+                    color = 0xFF216eb4;
+                    break;
+                case "3":
+                    color = 0xFF9a9940;
+                    break;
+                case "4":
+                    color = 0xFFbb4d98;
+                    break;
+                case "5":
+                    color = 0xFFde8b53;
+                    break;
+                case "6":
+                    color = 0xFF79bb92;
+                    break;
+                case "7":
+                    color = 0xFFdf9ab1;
+                    break;
+                case "8":
+                    color = 0xFFc5a3ca;
+                    break;
+                case "9":
+                    color = 0xFFcec92b;
+                    break;
+                case "10":
+                    color = 0xFFdfb039;
+                    break;
+                case "11":
+                    color = 0xFF8e6538;
+                    break;
+                case "12":
+                    color = 0xFF328e5b;
+                    break;
+                case "13":
+                    color = 0xFF89c7d6;
+                    break;
+                case "14":
+                    color = 0xFF67328e;
+                    break;
+                case "A":
+                    color = 0xFFD1302F;
+                    break;
+                case "B":
+                    color = 0xFF427DBD;
+                    break;
+                case "C":
+                    color = 0xFFFCD946;
+                    break;
+                case "D":
+                    color = 0xFF5E9620;
+                    break;
+                case "E":
+                    color = 0xFFBD76A1;
+                    break;
+                default:
+                    color = Color.GRAY;
+            }
             mTabs.add(new SamplePagerItem(
-                    lines.get(i), // Title
-                    Color.YELLOW, // Indicator color
+                    "ligne " + lines.get(i), // Title
+                    color, // Indicator color
                     Color.GRAY // Divider color
             ));
         }
-
-        mTabs.add(new SamplePagerItem(
-                getString(R.string.tab_stream), // Title
-                Color.BLUE, // Indicator color
-                Color.GRAY // Divider color
-        ));
-
-        mTabs.add(new SamplePagerItem(
-                getString(R.string.tab_messages), // Title
-                Color.RED, // Indicator color
-                Color.GRAY // Divider color
-        ));
-
-        mTabs.add(new SamplePagerItem(
-                getString(R.string.tab_photos), // Title
-                Color.YELLOW, // Indicator color
-                Color.GRAY // Divider color
-        ));
-
-        mTabs.add(new SamplePagerItem(
-                getString(R.string.tab_notifications), // Title
-                Color.GREEN, // Indicator color
-                Color.GRAY // Divider color
-        ));
         // END_INCLUDE (populate_tabs)
     }
 
@@ -227,9 +265,6 @@ public class SlidingTabsColorsFragment extends Fragment {
      */
     class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
 
-        private ArrayList<String> lines;
-        private JSONArray WCs;
-
         /*public SampleFragmentPagerAdapter(JSONArray biers) {
             this.WCs = biers;
         }*/
@@ -267,7 +302,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         }
         // END_INCLUDE (pageradapter_getpagetitle)
 
-        public void setNewLines() {
+        /*public void setNewLines() {
             WCs = new MainActivity().getWCFromFile();
 
             lines = new ArrayList();
@@ -294,7 +329,7 @@ public class SlidingTabsColorsFragment extends Fragment {
             }
             Log.d(TAG, "Fichier rechargé");
             notifyDataSetChanged();
-        }
+        }*/
 
 
     }
