@@ -77,7 +77,7 @@ public class GetWCServices extends IntentService {
             conn.setRequestMethod("GET");
             conn.connect();
             if(HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-                copyInputStreamToFile(conn.getInputStream(), new File(getExternalCacheDir(), "sanisettes.json"));
+                copyInputStreamToFile(conn.getInputStream(), new File(getCacheDir(), "sanisettes.json"));
                 Log.d(TAG, "json download");
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.WC_UPDATE));
             }

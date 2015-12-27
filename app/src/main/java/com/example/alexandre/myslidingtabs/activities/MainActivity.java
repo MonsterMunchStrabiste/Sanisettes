@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                setNewLines();
             }
         });
 
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     public class WCUpdate extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d("wc receive", intent.getAction().toString());//getIntent().getAction());
+            //Log.d("wc receive", intent.getAction().toString());//getIntent().getAction());
             //new SlidingTabsColorsFragment.SampleFragmentPagerAdapter.setNewLines();
         }
     }
