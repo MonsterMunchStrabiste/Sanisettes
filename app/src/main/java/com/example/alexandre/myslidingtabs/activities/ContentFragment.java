@@ -16,6 +16,7 @@
 
 package com.example.alexandre.myslidingtabs.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -75,7 +76,6 @@ public class ContentFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.pager_rv_fromline, container, false);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_biers);
-
         return rootView;
     }
 
