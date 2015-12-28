@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.example.alexandre.myslidingtabs.R;
 import com.example.alexandre.myslidingtabs.classes.LineAdapter;
+import com.example.alexandre.myslidingtabs.listeners.RecyclerItemClickListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,6 +77,20 @@ public class ContentFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.pager_rv_fromline, container, false);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_biers);
+        mRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getContext(), FullDescription.class);
+                        try {
+                            intent.putExtra("description", biers.getJSONObject(position).toString());//"line", position
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        startActivity(intent);
+                    }
+                })
+        );
         return rootView;
     }
 
