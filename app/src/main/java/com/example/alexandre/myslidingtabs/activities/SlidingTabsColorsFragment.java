@@ -189,7 +189,7 @@ public class SlidingTabsColorsFragment extends Fragment {
                     color = Color.GRAY;
             }
             mTabs.add(new SamplePagerItem(
-                    "ligne " + lines.get(i), // Title
+                    lines.get(i), // Title
                     color, // Indicator color
                     Color.GRAY // Divider color
             ));
@@ -298,7 +298,7 @@ public class SlidingTabsColorsFragment extends Fragment {
          */
         @Override
         public CharSequence getPageTitle(int position) {
-            return mTabs.get(position).getTitle();
+            return "ligne " + mTabs.get(position).getTitle();
         }
         // END_INCLUDE (pageradapter_getpagetitle)
 
