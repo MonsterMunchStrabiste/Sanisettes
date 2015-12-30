@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sanisettes</string>
+    <string name="action_settings">Parametres</string>
+    <string name="title_activity_main">Toutes les sanisettes</string>
+    <string name="tab_stream">Flux</string>
+    <string name="hello_world">Bonjour !</string>
+    <string name="tab_messages">Messages</string>
+    <string name="tab_notifications">Notifications</string>
+    <string name="tab_photos">Photos</string>
+    <string name="title_activity_full_description">Détails</string>
+    <string name="title_activity_home">Accueil</string>
+
+    <string name="navigation_drawer_open">Ouvrir le menu</string>
+    <string name="navigation_drawer_close">Fermer le menu</string>
+
+    <string name="filterbylines">Lister par ligne</string>
+    <string name="search">Rechercher</string>
+    <string name="about">A propos</string>
+    <string name="home">Accueil</string>
+
+</resources>

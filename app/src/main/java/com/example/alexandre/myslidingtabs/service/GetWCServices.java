@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.example.alexandre.myslidingtabs.activities.MainActivity;
+import com.example.alexandre.myslidingtabs.activities.ByLinesActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -79,7 +78,7 @@ public class GetWCServices extends IntentService {
             if(HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
                 copyInputStreamToFile(conn.getInputStream(), new File(getCacheDir(), "sanisettes.json"));
                 Log.d(TAG, "json download");
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.WC_UPDATE));
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(ByLinesActivity.WC_UPDATE));
             }
         } /*catch (MalformedURLException e) {
             e.printStackTrace();

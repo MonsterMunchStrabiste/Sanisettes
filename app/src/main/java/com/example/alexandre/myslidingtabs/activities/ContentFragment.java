@@ -124,7 +124,7 @@ public class ContentFragment extends Fragment {
         //mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         /*RecyclerView rv_biers = (RecyclerView) RecyclerView.findViewById(R.id.rv_biers);
-        adapter = new MainActivity().getWCFromFile();
+        adapter = new ByLinesActivity().getWCFromFile();
         rv_biers.setAdapter(adapter);*/
 
         /*Bundle args = getArguments();

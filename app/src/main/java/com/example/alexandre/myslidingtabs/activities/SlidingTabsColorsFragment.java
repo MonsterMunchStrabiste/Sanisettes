@@ -303,7 +303,7 @@ public class SlidingTabsColorsFragment extends Fragment {
         // END_INCLUDE (pageradapter_getpagetitle)
 
         /*public void setNewLines() {
-            WCs = new MainActivity().getWCFromFile();
+            WCs = new ByLinesActivity().getWCFromFile();
 
             lines = new ArrayList();
             for (int i = 0; i < WCs.length(); i++) {
