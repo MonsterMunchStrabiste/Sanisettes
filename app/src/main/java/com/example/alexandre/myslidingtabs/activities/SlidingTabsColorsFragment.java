@@ -300,37 +300,6 @@ public class SlidingTabsColorsFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             return "ligne " + mTabs.get(position).getTitle();
         }
-        // END_INCLUDE (pageradapter_getpagetitle)
-
-        /*public void setNewLines() {
-            WCs = new ByLinesActivity().getWCFromFile();
-
-            lines = new ArrayList();
-            for (int i = 0; i < WCs.length(); i++) {
-                try {
-                    String fields = WCs.getJSONObject(i).getString("fields");
-                    JSONObject inside = new JSONObject(fields);
-                    lines.add(inside.getString("ligne"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-            Set uniqueLines = new HashSet<String>(lines);
-            //this.lines = Collections.sort(uniqueLines);
-            this.lines = new ArrayList(uniqueLines);
-            Collections.sort(this.lines, new NaturalOrderComparator());
-            mTabs = new ArrayList<SamplePagerItem>();
-            for ( int i = 0; i < lines.size() ; i++ ) {
-                mTabs.add(new SamplePagerItem(
-                        lines.get(i), // Title
-                        Color.YELLOW, // Indicator color
-                        Color.GRAY // Divider color
-                ));
-            }
-            Log.d(TAG, "Fichier rechargé");
-            notifyDataSetChanged();
-        }*/
-
 
     }
 

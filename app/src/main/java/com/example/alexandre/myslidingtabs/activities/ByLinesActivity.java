@@ -10,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +36,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ByLinesActivity extends AppCompatActivity  {
+public class ByLinesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String TAG = "ByLinesActivity";
 
@@ -54,14 +55,14 @@ public class ByLinesActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
+        navigationView.setNavigationItemSelectedListener(this);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -89,17 +90,36 @@ public class ByLinesActivity extends AppCompatActivity  {
             transaction.commit();
         }
 
-
-        /*adapter = new SlidingTabsColorsFragment.SampleFragmentPagerAdapter(getWCFromFile());
-        rv_biers.setAdapter(adapter);*/
-        /*ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
-        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
-        vpPager.setAdapter(adapterViewPager);*/
-        //SlidingTabsColorsFragment.SampleFragmentPagerAdapter adapter = new SlidingTabsColorsFragment.SampleFragmentPagerAdapter(getWCFromFile());
-        //adapter.setNewLines();
     }
 
     public static final String WC_UPDATE = "WC_UPDATE";
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.filterbylines) {
+            Intent intent = new Intent(this, ByLinesActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
     public class WCUpdate extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -177,10 +197,6 @@ public class ByLinesActivity extends AppCompatActivity  {
         }*/
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 

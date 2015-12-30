@@ -10,6 +10,7 @@
     <string name="tab_photos">Photos</string>
     <string name="title_activity_full_description">Détails</string>
     <string name="title_activity_home">Accueil</string>
+    <string name="line">ligne</string>
 
     <string name="navigation_drawer_open">Ouvrir le menu</string>
     <string name="navigation_drawer_close">Fermer le menu</string>

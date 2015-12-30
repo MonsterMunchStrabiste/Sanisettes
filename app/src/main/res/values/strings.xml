@@ -9,6 +9,7 @@
     <string name="tab_photos">Photos</string>
     <string name="title_activity_full_description">Full description</string>
     <string name="title_activity_home">Home</string>
+    <string name="line">line</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -17,4 +18,5 @@
     <string name="search">Rechercher</string>
     <string name="about">A propos</string>
     <string name="home">Accueil</string>
+    <string name="title_activity_about">AboutActivity</string>
 </resources>
