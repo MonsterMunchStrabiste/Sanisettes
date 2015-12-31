@@ -95,15 +95,25 @@ public class FullDescription extends AppCompatActivity implements NavigationView
         try {
             new LoadImage().execute("http://metrorama.free.fr/2005-08-PorteDeVersailles12P.jpg");
             //ImageView header = (ImageView) findViewById(R.id.header);
-            TextView title = (TextView) findViewById(R.id.name);
+            //TextView title = (TextView) findViewById(R.id.name);
             TextView line = (TextView) findViewById(R.id.line);
             TextView description = (TextView) findViewById(R.id.description);
+            TextView working = (TextView) findViewById(R.id.working);
+            TextView price = (TextView) findViewById(R.id.price);
+            TextView access = (TextView) findViewById(R.id.access);
+            TextView pmr = (TextView) findViewById(R.id.pmr);
+            //TextView line = (TextView) findViewById(R.id.line);
             //header.setImageResource(R.mipmap.ic_launcher);
             //header.setImageBitmap(downloadBitmap("http://metrorama.free.fr/2005-08-PorteDeVersailles12P.jpg"));
             setTitle(inside.getString("station"));
-            title.setText(inside.getString("station") );
+            //title.setText(inside.getString("station"));
             line.setText(inside.getString("ligne"));
             description.setText(inside.getString("localisation"));
+            working.setText(inside.getString("actif_o_n"));
+            price.setText(inside.getString("tarif_gratuit_payant"));
+            access.setText(inside.getString("acces_bouton_poussoir"));
+            pmr.setText(inside.getString("accessible_pmr_oui_non"));
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
