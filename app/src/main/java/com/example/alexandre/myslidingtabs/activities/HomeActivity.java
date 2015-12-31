@@ -53,6 +53,8 @@ public class HomeActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });*/
+        View namebar = findViewById(R.id.fab);
+        ((ViewGroup) namebar.getParent()).removeView(namebar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
