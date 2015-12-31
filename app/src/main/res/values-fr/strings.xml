@@ -21,5 +21,8 @@
     <string name="search">Rechercher</string>
     <string name="about">A propos</string>
     <string name="home">Accueil</string>
+    <string name="subdesc">Les toilettes sont principalement triées en fonction de la ligne depuis laquelle elle sont accessibles.</string>
+    <string name="maindesc">Sanisettes répertorie les toilettes existantes au sein du réseau RATP</string>
+    <string name="btn_try">Essayez !</string>
 
 </resources>

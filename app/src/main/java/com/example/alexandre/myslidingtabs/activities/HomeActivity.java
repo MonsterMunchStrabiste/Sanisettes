@@ -1,10 +1,17 @@
 package com.example.alexandre.myslidingtabs.activities;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.alexandre.myslidingtabs.R;
 
@@ -37,14 +45,14 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,6 +62,40 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button button_2 = (Button) findViewById(R.id.button2);
+        button_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String now = DateUtils.formatDateTime(getApplicationContext(), (new java.util.Date()).getTime(), java.text.DateFormat.FULL);
+                NotificationCompat.Builder mBuilder =
+                        (NotificationCompat.Builder) new NotificationCompat.Builder(getBaseContext())
+                                .setSmallIcon(R.drawable.ic_yes)
+                                .setContentTitle("Vous avez démarré l'activité le")
+                                .setContentText(now);
+                Intent notificationIntent = new Intent(getBaseContext(), HomeActivity.class);
+                //NotificationCompat.Builder.build(mBuilder);
+                TaskStackBuilder stackBuilder = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    stackBuilder = TaskStackBuilder.create(getBaseContext());
+                    stackBuilder.addParentStack(HomeActivity.class);
+                    stackBuilder.addNextIntent(notificationIntent);
+                    PendingIntent notificationPendingIntent =
+                            stackBuilder.getPendingIntent(
+                                    0,
+                                    PendingIntent.FLAG_UPDATE_CURRENT
+                            );
+                    mBuilder.setContentIntent(notificationPendingIntent);
+                }
+
+                NotificationManager mNotificationManager =
+                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+// mId allows you to update the notification later on.
+                mNotificationManager.notify(1, mBuilder.build());
+                startActivity(new Intent(getBaseContext(), ByLinesActivity.class));
+            }
+        });
+
     }
 
     @Override
@@ -114,5 +156,9 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void launchClick(View view) {
+        //startActivity(new Intent(this, ByLinesActivity.class));
     }
 }
