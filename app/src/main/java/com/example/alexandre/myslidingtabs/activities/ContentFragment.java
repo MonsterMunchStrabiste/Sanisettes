@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.example.alexandre.myslidingtabs.R;
 import com.example.alexandre.myslidingtabs.classes.LineAdapter;
+import com.example.alexandre.myslidingtabs.classes.NaturalOrderComparator;
 import com.example.alexandre.myslidingtabs.listeners.RecyclerItemClickListener;
 
 import org.json.JSONArray;
@@ -39,6 +40,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Simple Fragment used to display some meaningful content for each page in the sample's
@@ -113,6 +115,7 @@ public class ContentFragment extends Fragment {
                 e.printStackTrace();
             }
         }
+        Collections.sort(fromLines, new NaturalOrderComparator());
         biers = new JSONArray(fromLines);
         Log.d("Content", "JSON adapté");
 

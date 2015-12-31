@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="@string/home" />
         <item
             android:id="@+id/filterbylines"
@@ -15,21 +15,21 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/about" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/action_search"
+            android:icon="@drawable/ic_search"
+            android:title="@string/search" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Communiquer">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Partager" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Nous remercier" />
         </menu>
     </item>
 

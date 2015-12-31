@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sanisettes</string>
+    <string name="moto">Un must-have parisien</string>
     <string name="action_settings">Parametres</string>
     <string name="title_activity_main">Toutes les sanisettes</string>
     <string name="tab_stream">Flux</string>
@@ -11,6 +12,7 @@
     <string name="title_activity_full_description">Détails</string>
     <string name="title_activity_home">Accueil</string>
     <string name="line">ligne</string>
+    <string name="search_hint">Châtelet</string>
 
     <string name="navigation_drawer_open">Ouvrir le menu</string>
     <string name="navigation_drawer_close">Fermer le menu</string>
