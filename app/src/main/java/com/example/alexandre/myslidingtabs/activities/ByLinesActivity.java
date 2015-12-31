@@ -110,11 +110,18 @@ public class ByLinesActivity extends AppCompatActivity implements NavigationView
         } else if (id == R.id.about) {
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
-        } else if (id == R.id.action_search) {
-            //Intent intent = new Intent(this, Searchable.class);
-            startSearch("", false, null, false);
+        } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, "Je viens de découvrir l'application des Alexandre, elle est vraiment superbe. Ils auront 20!");
+            startActivity(Intent.createChooser(intent, "Partager le message"));
         } else if (id == R.id.nav_send) {
-
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("message/rfc822");
+            intent.putExtra(Intent.EXTRA_TEXT, "Merci beaucoup pour cette superbe application, je vous mets 20 ! :)");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Merci");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "villa@et.esiea.fr" , "rastel@et.esiea.fr" });
+            startActivity(Intent.createChooser(intent, "Envoyer un mail de remerciement"));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
